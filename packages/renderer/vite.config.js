@@ -1,6 +1,6 @@
 /* eslint-env node */
 import { defineConfig } from 'vite';
-import { chrome } from '../../.electron-vendors.cache.json';
+import { chrome } from '../../.electron-vendors.cache';
 import { join } from 'path';
 import react from '@vitejs/plugin-react';
 import { renderer } from 'unplugin-auto-expose';
@@ -35,9 +35,6 @@ export default defineConfig(() => ({
     },
     emptyOutDir: true,
     reportCompressedSize: false,
-  },
-  test: {
-    environment: 'happy-dom',
   },
   plugins: [
     react(),
