@@ -15,12 +15,19 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "types": ["node"],
     "paths": {
+      "#preload": ["../preload/src/index"],
       "/@/*": ["./src/*"]
     },
     "baseUrl": "."
   },
-  "include": ["src"],
-  "exclude": ["dist", "*.config.js"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "types/**/*.d.ts",
+    "../../types/**/*.d.ts"
+  ],
+  "exclude": ["dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
