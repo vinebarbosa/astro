@@ -1,9 +1,8 @@
-import { Box, Button } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
-import MaximizeIcon from "@mui/icons-material/CropSquare";
+import MaximizeIcon from "@mui/icons-material/StopOutlined";
 import MinimizeIcon from "@mui/icons-material/Remove";
-
 import { closeWindow, minimizeWindow, toggleMaximizeWindow } from "#preload";
 
 export function Header() {
@@ -40,22 +39,51 @@ export function Header() {
         }}
       />
       <Box sx={{ display: "flex" }}>
-        <Button
+        <IconButton
           onClick={handleMinimize}
           color="secondary"
           sx={{
-            p: 0,
-            m: 0,
+            borderRadius: 0,
+            px: 1.6,
+            ":hover": {
+              backgroundColor: "grey.500",
+              color: "text.secondary",
+            },
           }}
         >
           <MinimizeIcon fontSize="small" />
-        </Button>
-        <Button size="small" onClick={handleMaximize} color="secondary">
+        </IconButton>
+        <IconButton
+          size="small"
+          onClick={handleMaximize}
+          color="secondary"
+          sx={{
+            fontSize: 12,
+            borderRadius: 0,
+            px: 1.6,
+            ":hover": {
+              backgroundColor: "grey.500",
+              color: "text.secondary",
+            },
+          }}
+        >
           <MaximizeIcon fontSize="small" />
-        </Button>
-        <Button size="small" onClick={handleClose} color="secondary">
+        </IconButton>
+        <IconButton
+          size="small"
+          onClick={handleClose}
+          color="secondary"
+          sx={{
+            borderRadius: 0,
+            px: 1.6,
+            ":hover": {
+              backgroundColor: "error.main",
+              color: "error.contrastText",
+            },
+          }}
+        >
           <CloseIcon fontSize="small" />
-        </Button>
+        </IconButton>
       </Box>
     </Box>
   );
