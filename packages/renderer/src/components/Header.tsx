@@ -41,13 +41,12 @@ export function Header() {
       <Box sx={{ display: "flex" }}>
         <IconButton
           onClick={handleMinimize}
-          color="secondary"
           sx={{
+            color: "text.primary",
             borderRadius: 0,
             px: 1.6,
             ":hover": {
-              backgroundColor: "grey.500",
-              color: "text.secondary",
+              backgroundColor: "grey.400",
             },
           }}
         >
@@ -58,12 +57,11 @@ export function Header() {
           onClick={handleMaximize}
           color="secondary"
           sx={{
-            fontSize: 12,
+            color: "text.primary",
             borderRadius: 0,
             px: 1.6,
             ":hover": {
-              backgroundColor: "grey.500",
-              color: "text.secondary",
+              backgroundColor: "grey.400",
             },
           }}
         >
@@ -72,13 +70,12 @@ export function Header() {
         <IconButton
           size="small"
           onClick={handleClose}
-          color="secondary"
           sx={{
+            color: "text.primary",
             borderRadius: 0,
             px: 1.6,
             ":hover": {
-              backgroundColor: "error.main",
-              color: "error.contrastText",
+              backgroundColor: "#C94845",
             },
           }}
         >
