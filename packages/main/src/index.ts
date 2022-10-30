@@ -1,5 +1,5 @@
 import { app } from 'electron';
-import './security-restrictions';
+import '/@/config/security-restrictions';
 import { restoreOrCreateWindow } from '/@/mainWindow';
 
 /**

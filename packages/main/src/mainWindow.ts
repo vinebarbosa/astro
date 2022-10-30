@@ -1,7 +1,7 @@
 import { app, BrowserWindow, Menu } from 'electron';
 import { join } from 'path';
 import { URL } from 'url';
-import { registerIpcMainListeners } from './ipc';
+import { registerIpcMainListeners } from '/@/modules/ipc';
 
 async function createWindow() {
   const browserWindow = new BrowserWindow({
