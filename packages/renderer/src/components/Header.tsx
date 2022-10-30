@@ -1,10 +1,24 @@
+import { Box, Button } from "@mui/material";
+
 import CloseIcon from "@mui/icons-material/Close";
-import Maximize from "@mui/icons-material/CropSquare";
+import MaximizeIcon from "@mui/icons-material/CropSquare";
 import MinimizeIcon from "@mui/icons-material/Remove";
 
-import { Box, IconButton } from "@mui/material";
+import { closeWindow, minimizeWindow, toggleMaximizeWindow } from "#preload";
 
 export function Header() {
+  function handleClose() {
+    closeWindow();
+  }
+
+  function handleMaximize() {
+    toggleMaximizeWindow();
+  }
+
+  function handleMinimize() {
+    minimizeWindow();
+  }
+
   return (
     <Box
       sx={{
@@ -15,7 +29,6 @@ export function Header() {
         width: "100%",
         backgroundColor: "background.paper",
         color: "primary.contrastText",
-        px: 1,
       }}
     >
       <Box
@@ -27,15 +40,22 @@ export function Header() {
         }}
       />
       <Box sx={{ display: "flex" }}>
-        <IconButton size="small">
-          <MinimizeIcon />
-        </IconButton>
-        <IconButton size="small">
-          <Maximize />
-        </IconButton>
-        <IconButton size="small">
-          <CloseIcon />
-        </IconButton>
+        <Button
+          onClick={handleMinimize}
+          color="secondary"
+          sx={{
+            p: 0,
+            m: 0,
+          }}
+        >
+          <MinimizeIcon fontSize="small" />
+        </Button>
+        <Button size="small" onClick={handleMaximize} color="secondary">
+          <MaximizeIcon fontSize="small" />
+        </Button>
+        <Button size="small" onClick={handleClose} color="secondary">
+          <CloseIcon fontSize="small" />
+        </Button>
       </Box>
     </Box>
   );

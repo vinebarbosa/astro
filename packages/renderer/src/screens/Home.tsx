@@ -12,7 +12,7 @@ export function Home() {
         height: "calc(100vh - 64px)",
       }}
     >
-      <HeroLogo width="300" />
+      <HeroLogo width="200" />
     </Box>
   );
 }
