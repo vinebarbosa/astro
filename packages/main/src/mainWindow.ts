@@ -1,6 +1,7 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Menu } from 'electron';
 import { join } from 'path';
 import { URL } from 'url';
+import { registerIpcMainListeners } from './ipc';
 
 async function createWindow() {
   const browserWindow = new BrowserWindow({
@@ -8,14 +9,17 @@ async function createWindow() {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      sandbox: false, // Sandbox disabled because the demo of preload script depend on the Node.js api
+      sandbox: true,
       webviewTag: false, // The webview tag is not recommended. Consider alternatives like an iframe or Electron's BrowserView. @see https://www.electronjs.org/docs/latest/api/webview-tag#warning
       preload: join(app.getAppPath(), 'packages/preload/dist/index.cjs'),
     },
     frame: false,
   });
 
-  browserWindow.setMenu(null);
+  // Disable the default menu.
+  Menu.setApplicationMenu(null);
+
+  registerIpcMainListeners();
 
   browserWindow.on('ready-to-show', () => {
     browserWindow?.show();
