@@ -41,3 +41,7 @@ This will make the project run in development mode. An electron window will open
 ## Figma Design
 
 The design for the project is available on Figma. You can access it [here](https://www.figma.com/community/file/1169044478747969039).
+
+## Liscense
+
+Stream Kit is licensed under the [MIT License](https://github.com/vinebarbosa/stream-kit/blob/main/LICENSE) and is free to use.
